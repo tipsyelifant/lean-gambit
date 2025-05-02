@@ -1,4 +1,3 @@
-# lean-gambit
 # Virtual Escape Room
 
 A web-based virtual escape room game built with React, TypeScript, and Chakra UI.
