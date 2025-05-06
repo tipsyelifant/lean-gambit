@@ -1,0 +1,127 @@
+/* Layout */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Home Page */
+.home-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.game-description {
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+.start-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.start-button:hover {
+  background-color: #45a049;
+}
+
+/* Letter Page */
+.letter-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.letter-content {
+  margin: 2rem 0;
+  line-height: 1.6;
+}
+
+/* Puzzle Page */
+.puzzle-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.puzzle-content {
+  margin: 2rem 0;
+}
+
+.scenario {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.answer-section {
+  margin: 1.5rem 0;
+}
+
+.answer-section label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.answer-section input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.feedback {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #e8f5e9;
+  border-radius: 4px;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.navigation-buttons button {
+  padding: 0.5rem 1rem;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navigation-buttons button:hover {
+  background-color: #1976D2;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .home-container,
+  .letter-container,
+  .puzzle-container {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
