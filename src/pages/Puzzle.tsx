@@ -17,32 +17,26 @@ function Puzzle() {
     <div className="puzzle-container">
       <h1>Challenge {puzzleId}</h1>
       <div className="puzzle-content">
+        <h2>Scenario</h2>
         <p>
-          Read the scenario below and identify which Lean principle is being demonstrated
-          or should be applied.
+          A manufacturing team has implemented a 5S system to organize their workspace.
+          They've sorted, set in order, and cleaned their area, but they're still experiencing
+          efficiency issues. What's the next step they should take?
         </p>
-        <div className="scenario">
-          <h2>Scenario</h2>
-          <p>
-            A manufacturing team notices that they're spending significant time searching
-            for tools and materials. They decide to implement a 5S system to organize
-            their workspace.
-          </p>
-        </div>
         <form onSubmit={handleSubmit}>
-          <div className="answer-section">
+          <div className="answer-input">
             <label htmlFor="answer">Your Answer:</label>
             <input
               type="text"
               id="answer"
               value={answer}
               onChange={(e) => setAnswer(e.target.value)}
-              placeholder="Enter the Lean principle..."
+              placeholder="Enter your answer..."
             />
           </div>
           <button type="submit">Submit Answer</button>
         </form>
-        {feedback && <div className="feedback">{feedback}</div>}
+        {feedback && <p className="feedback">{feedback}</p>}
       </div>
       <div className="navigation-buttons">
         <button onClick={() => navigate('/letter')}>Back</button>
