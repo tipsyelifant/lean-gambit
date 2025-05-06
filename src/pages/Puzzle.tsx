@@ -35,6 +35,7 @@ function Puzzle() {
   const [answer, setAnswer] = useState('');
   const [feedback, setFeedback] = useState('');
   const [showHint, setShowHint] = useState(false);
+  const [isCorrect, setIsCorrect] = useState(false);
 
   const currentChallenge = challenges[puzzleId as keyof typeof challenges];
 
@@ -53,17 +54,24 @@ function Puzzle() {
     const userAnswer = answer.toLowerCase().trim();
     
     if (userAnswer === currentChallenge.answer) {
-      setFeedback('Correct! Moving to next challenge...');
-      setTimeout(() => {
-        if (Number(puzzleId) < 4) {
-          navigate(`/puzzle/${Number(puzzleId) + 1}`);
-        } else {
-          navigate('/');
-        }
-      }, 1500);
+      setFeedback('Correct! You can now proceed to the next challenge.');
+      setIsCorrect(true);
     } else {
       setFeedback('Incorrect. Try again!');
       setShowHint(true);
+      setIsCorrect(false);
+    }
+  };
+
+  const handleNextChallenge = () => {
+    if (isCorrect) {
+      if (Number(puzzleId) < 4) {
+        navigate(`/puzzle/${Number(puzzleId) + 1}`);
+      } else {
+        navigate('/');
+      }
+    } else {
+      setFeedback('You must answer this challenge correctly before proceeding!');
     }
   };
 
@@ -92,7 +100,10 @@ function Puzzle() {
       <div className="navigation-buttons">
         <button onClick={() => navigate('/letter')}>Back</button>
         {Number(puzzleId) < 4 && (
-          <button onClick={() => navigate(`/puzzle/${Number(puzzleId) + 1}`)}>
+          <button 
+            onClick={handleNextChallenge}
+            className={isCorrect ? 'next-button' : 'next-button disabled'}
+          >
             Next Challenge
           </button>
         )}
