@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 // Define the challenges and their answers
@@ -36,6 +36,14 @@ function Puzzle() {
   const [feedback, setFeedback] = useState('');
   const [showHint, setShowHint] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+
+  // Reset states when puzzleId changes
+  useEffect(() => {
+    setAnswer('');
+    setFeedback('');
+    setShowHint(false);
+    setIsCorrect(false);
+  }, [puzzleId]);
 
   const currentChallenge = challenges[puzzleId as keyof typeof challenges];
 
