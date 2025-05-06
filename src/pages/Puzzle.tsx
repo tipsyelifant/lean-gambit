@@ -52,7 +52,7 @@ function Puzzle() {
       <div className="puzzle-container">
         <h1>Congratulations!</h1>
         <p>You've completed all challenges!</p>
-        <button onClick={() => navigate('/')}>Return to Home</button>
+        <button onClick={() => navigate('/congratulations')}>View Your Achievement</button>
       </div>
     );
   }
@@ -76,7 +76,7 @@ function Puzzle() {
       if (Number(puzzleId) < 4) {
         navigate(`/puzzle/${Number(puzzleId) + 1}`);
       } else {
-        navigate('/');
+        navigate('/congratulations');
       }
     } else {
       setFeedback('You must answer this challenge correctly before proceeding!');
