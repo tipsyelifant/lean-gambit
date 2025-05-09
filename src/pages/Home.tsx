@@ -5,20 +5,23 @@ function Home() {
 
   return (
     <div className="home-container">
-      <h1>Lean Gambit</h1>
+      <h1>Lean's Gambit</h1>
       <div className="game-description">
         <p>
-          Welcome to the Lean Gambit, where your knowledge of Lean principles will be put to the test.
-          Through a series of challenging scenarios, you'll demonstrate your understanding of Lean methodology
-          and continuous improvement practices.
+          In the world of continuous improvement, every move counts. Welcome to Lean's Gambit,
+          where your strategic thinking and knowledge of Lean principles will be put to the ultimate test.
         </p>
         <p>
-          Each challenge presents a unique situation where you must apply your Lean knowledge to solve
-          real-world problems. Are you ready to prove your expertise?
+          Through a series of challenging scenarios, you'll navigate the complex landscape of
+          process improvement, making critical decisions that could transform your organization.
+          Each challenge is a move in the grand game of operational excellence.
+        </p>
+        <p>
+          Are you ready to make your first move?
         </p>
       </div>
       <button className="start-button" onClick={() => navigate('/letter')}>
-        Begin Your Journey
+        Begin the Game
       </button>
     </div>
   );
