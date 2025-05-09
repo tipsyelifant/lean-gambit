@@ -83,6 +83,14 @@ function Puzzle() {
     }
   };
 
+  const handleBack = () => {
+    if (Number(puzzleId) > 1) {
+      navigate(`/puzzle/${Number(puzzleId) - 1}`);
+    } else {
+      navigate('/letter');
+    }
+  };
+
   return (
     <div className="puzzle-container">
       <h1>Challenge {puzzleId}: {currentChallenge.title}</h1>
@@ -106,7 +114,7 @@ function Puzzle() {
         {showHint && <p className="hint">Hint: {currentChallenge.hint}</p>}
       </div>
       <div className="navigation-buttons">
-        <button onClick={() => navigate('/letter')}>Back</button>
+        <button onClick={handleBack}>Back</button>
         {Number(puzzleId) < 4 ? (
           <button 
             onClick={handleNextChallenge}
