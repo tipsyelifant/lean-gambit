@@ -6,24 +6,24 @@ function Letter() {
   return (
     <div className="letter-container">
       <div className="letter-content">
-        <h1>Welcome to Your Lean Journey</h1>
-        <p>Dear Lean Enthusiast,</p>
+        <h1>The Challenge Begins</h1>
+        <p>Dear Strategist,</p>
         <p>
-          You have been chosen to participate in a series of challenges that will test your understanding
-          of Lean principles and continuous improvement methodologies. Your mission is to solve each
-          challenge by applying the appropriate Lean tools and concepts.
+          You have been selected to participate in a series of challenges that will test your mastery
+          of Lean principles and continuous improvement methodologies. Like a grandmaster in chess,
+          you must think several moves ahead, anticipating the impact of each decision.
         </p>
         <p>
-          Each challenge represents a real-world scenario where Lean principles can be applied to
-          improve processes and eliminate waste. Your knowledge and expertise will be crucial in
-          finding the right solutions.
+          Each challenge represents a critical position in the game of operational excellence.
+          Your knowledge of Lean tools and concepts will be your pieces on the board, and your
+          strategic thinking will determine your success.
         </p>
         <p>
-          Are you ready to begin your journey? The first challenge awaits...
+          The first challenge awaits. Will you make the right move?
         </p>
         <div className="navigation-buttons">
-          <button onClick={() => navigate('/')}>Return</button>
-          <button onClick={() => navigate('/puzzle/1')}>Begin First Challenge</button>
+          <button onClick={() => navigate('/')}>Return to Board</button>
+          <button onClick={() => navigate('/puzzle/1')}>Make Your Move</button>
         </div>
       </div>
     </div>
