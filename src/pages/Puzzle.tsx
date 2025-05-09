@@ -107,12 +107,19 @@ function Puzzle() {
       </div>
       <div className="navigation-buttons">
         <button onClick={() => navigate('/letter')}>Back</button>
-        {Number(puzzleId) < 4 && (
+        {Number(puzzleId) < 4 ? (
           <button 
             onClick={handleNextChallenge}
             className={isCorrect ? 'next-button' : 'next-button disabled'}
           >
             Next Challenge
+          </button>
+        ) : (
+          <button 
+            onClick={handleNextChallenge}
+            className={isCorrect ? 'next-button complete' : 'next-button disabled'}
+          >
+            Complete Challenge
           </button>
         )}
       </div>
