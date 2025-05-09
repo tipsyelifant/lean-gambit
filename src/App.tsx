@@ -3,7 +3,6 @@ import Home from './pages/Home'
 import Letter from './pages/Letter'
 import Puzzle from './pages/Puzzle'
 import Congratulations from './pages/Congratulations'
-import Registration from './pages/Registration'
 import './styles/components.css'
 
 function App() {
