@@ -9,7 +9,18 @@ const challenges = {
     answer: 'standardize',
     hint: 'Think about making the process consistent and repeatable',
     image: '/images/5s-implementation.jpg',
-    imageAlt: 'A manufacturing workspace showing 5S implementation'
+    imageAlt: 'A manufacturing workspace showing 5S implementation',
+    workApplication: {
+      title: 'Applying 5S in Public Service',
+      description: 'In a public service context, standardization can be applied to:',
+      points: [
+        'Document Management: Create consistent filing systems across departments',
+        'Workspace Organization: Implement standard desk and office layouts',
+        'Process Documentation: Develop standard operating procedures for common tasks',
+        'Digital Organization: Standardize folder structures and naming conventions'
+      ],
+      impact: 'By standardizing these elements, you can reduce time spent searching for information, minimize errors, and make it easier for colleagues to collaborate effectively.'
+    }
   },
   '2': {
     title: 'Value Stream Mapping',
@@ -17,7 +28,18 @@ const challenges = {
     answer: 'value stream mapping',
     hint: 'It\'s a visual tool that shows the flow of materials and information',
     image: '/images/value-stream-mapping.jpg',
-    imageAlt: 'A value stream map showing process flow'
+    imageAlt: 'A value stream map showing process flow',
+    workApplication: {
+      title: 'Value Stream Mapping in Government Services',
+      description: 'Value Stream Mapping can transform public service processes by:',
+      points: [
+        'Permit Processing: Map the flow of applications from submission to approval',
+        'Service Delivery: Visualize citizen service request journey',
+        'Internal Processes: Track administrative workflows across departments',
+        'Information Flow: Analyze how data moves between agencies'
+      ],
+      impact: 'By mapping these processes, you can identify bottlenecks, reduce processing times, and improve citizen satisfaction with government services.'
+    }
   },
   '3': {
     title: 'Kanban System',
@@ -25,7 +47,18 @@ const challenges = {
     answer: 'kanban',
     hint: 'It\'s a visual signaling system that originated in Japan',
     image: '/images/kanban-board.jpg',
-    imageAlt: 'A Kanban board showing work items and their status'
+    imageAlt: 'A Kanban board showing work items and their status',
+    workApplication: {
+      title: 'Kanban in Public Administration',
+      description: 'Kanban principles can enhance public service workflow management through:',
+      points: [
+        'Project Tracking: Visualize project stages and progress',
+        'Task Management: Control work-in-progress limits for teams',
+        'Resource Allocation: Balance workload across staff members',
+        'Service Requests: Manage and prioritize citizen inquiries'
+      ],
+      impact: 'Implementing Kanban can help teams visualize work, prevent overload, and ensure timely delivery of public services.'
+    }
   },
   '4': {
     title: 'Kaizen Event',
@@ -33,7 +66,18 @@ const challenges = {
     answer: 'kaizen',
     hint: 'It\'s a Japanese term meaning "change for better"',
     image: '/images/kaizen-event.jpg',
-    imageAlt: 'A team conducting a Kaizen event'
+    imageAlt: 'A team conducting a Kaizen event',
+    workApplication: {
+      title: 'Kaizen in Government Operations',
+      description: 'Kaizen events can revolutionize public service delivery through:',
+      points: [
+        'Process Improvement: Conduct focused workshops to streamline procedures',
+        'Service Enhancement: Gather team input for service quality improvements',
+        'Workplace Efficiency: Identify and eliminate administrative waste',
+        'Cultural Change: Foster a continuous improvement mindset'
+      ],
+      impact: 'Regular Kaizen events can lead to incremental improvements that significantly enhance public service efficiency and effectiveness.'
+    }
   }
 };
 
@@ -44,6 +88,7 @@ function Puzzle() {
   const [feedback, setFeedback] = useState('');
   const [showHint, setShowHint] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+  const [showWorkApplication, setShowWorkApplication] = useState(false);
 
   // Reset states when puzzleId changes
   useEffect(() => {
@@ -51,6 +96,7 @@ function Puzzle() {
     setFeedback('');
     setShowHint(false);
     setIsCorrect(false);
+    setShowWorkApplication(false);
   }, [puzzleId]);
 
   const currentChallenge = challenges[puzzleId as keyof typeof challenges];
@@ -72,10 +118,12 @@ function Puzzle() {
     if (userAnswer === currentChallenge.answer) {
       setFeedback('Correct! You can now proceed to the next challenge.');
       setIsCorrect(true);
+      setShowWorkApplication(true);
     } else {
       setFeedback('Incorrect. Try again!');
       setShowHint(true);
       setIsCorrect(false);
+      setShowWorkApplication(false);
     }
   };
 
@@ -129,6 +177,20 @@ function Puzzle() {
         </form>
         {feedback && <p className={`feedback ${feedback.includes('Correct') ? 'correct' : 'incorrect'}`}>{feedback}</p>}
         {showHint && <p className="hint">Hint: {currentChallenge.hint}</p>}
+        
+        {showWorkApplication && (
+          <div className="work-application">
+            <h2>How can I apply this to my work?</h2>
+            <h3>{currentChallenge.workApplication.title}</h3>
+            <p>{currentChallenge.workApplication.description}</p>
+            <ul>
+              {currentChallenge.workApplication.points.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
+            <p className="impact">{currentChallenge.workApplication.impact}</p>
+          </div>
+        )}
       </div>
       <div className="navigation-buttons">
         <button onClick={handleBack}>Back</button>
