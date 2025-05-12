@@ -431,3 +431,116 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Registration Page */
+.registration-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 3rem;
+  text-align: center;
+  background-color: rgba(26, 26, 26, 0.9);
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #4a4a4a;
+  position: relative;
+  z-index: 1;
+}
+
+.registration-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.registration-content h1 {
+  font-size: 3rem;
+  color: #e0e0e0;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.registration-content p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #b8b8b8;
+}
+
+.register-button {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: #e0e0e0;
+  border: 1px solid #8b0000;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+}
+
+.register-button:hover {
+  background-color: #8b0000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 0, 0, 0.3);
+}
+
+.verification-form {
+  margin-top: 2rem;
+}
+
+.code-input {
+  margin: 2rem 0;
+}
+
+.code-input input {
+  width: 100%;
+  max-width: 300px;
+  padding: 1rem;
+  font-size: 1.1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #4a4a4a;
+  color: #e0e0e0;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.code-input input:focus {
+  outline: none;
+  border-color: #8b0000;
+}
+
+.verification-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.verification-buttons button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #e0e0e0;
+  border: 1px solid #4a4a4a;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.verification-buttons button[type="submit"] {
+  border-color: #8b0000;
+}
+
+.verification-buttons button:hover {
+  background-color: #8b0000;
+  border-color: #8b0000;
+  color: #fff;
+}
+
+.error-message {
+  color: #ff4444;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}

@@ -20,7 +20,7 @@ function Home() {
           Are you ready to make your first move?
         </p>
       </div>
-      <button className="start-button" onClick={() => navigate('/letter')}>
+      <button className="start-button" onClick={() => navigate('/registration')}>
         Begin the Game
       </button>
     </div>
